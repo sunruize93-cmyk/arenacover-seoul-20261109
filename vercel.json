@@ -5,8 +5,13 @@
   "installCommand": "npm ci",
   "redirects": [
     {
+      "source": "/demo/ArenaCover_Demo60s.mp4",
+      "destination": "/demo/ArenaCover_Demo75s.mp4",
+      "permanent": false
+    },
+    {
       "source": "/demo/ArenaCover_Demo90s.mp4",
-      "destination": "/demo/ArenaCover_Demo60s.mp4",
+      "destination": "/demo/ArenaCover_Demo75s.mp4",
       "permanent": false
     }
   ]

@@ -2,9 +2,9 @@
 
 [English](./README.md) · [한국어](./README.ko.md) · [中文](./README.zh-CN.md)
 
-[![ArenaCover — Who pays?](./public/assets/film-poster.jpg)](https://arenacover-seoul-20261109.vercel.app/demo/ArenaCover_Demo60s.mp4)
+[![ArenaCover — Who pays?](./public/assets/film-poster.jpg)](https://arenacover-seoul-20261109.vercel.app/demo/ArenaCover_Demo75s.mp4)
 
-**[Live demo](https://arenacover-seoul-20261109.vercel.app) · [60-second English film](https://arenacover-seoul-20261109.vercel.app/demo/ArenaCover_Demo60s.mp4)**
+**[Live demo](https://arenacover-seoul-20261109.vercel.app) · [75-second English film](https://arenacover-seoul-20261109.vercel.app/demo/ArenaCover_Demo75s.mp4)**
 
 > **Built for Injective EVM Testnet (chain 1439).** The current recorded proof runs on local EVM chain 31337. Testnet deployment tooling is ready; public testnet deployment has not been completed.
 
@@ -37,7 +37,7 @@ Each deployment supports one order. Run `npm run deploy:local` to prepare anothe
 - `node scripts/browser-check.mjs` — exercises a fresh local deployment in Chromium; writes confirmed receipts and screenshots. Install Chromium with `npx playwright install chromium` first.
 - `node scripts/recovery-check.mjs` — verifies that a reload recovers a confirmed payout receipt before clearing pending state.
 - `npm run scenario` — terminal execution of a fresh deployment, with machine-readable evidence.
-- `node scripts/record-demo.mjs` then `node scripts/render-demo.mjs` — records a fresh deployment for 60 seconds and adds disclosed macOS synthesized English narration. The renderer requires the local Python package imageio-ffmpeg.
+- `node scripts/record-demo.mjs` then `node scripts/render-demo.mjs` — records a fresh deployment for 75 seconds and adds disclosed macOS synthesized English narration. The renderer requires the local Python package imageio-ffmpeg.
 
 [Verification record](./VERIFICATION.md) · [Confirmed run JSON](./public/evidence/run.json) · [TEE check result](./TEE_CHECK_RESULT.md)
 
@@ -82,7 +82,7 @@ References: [Arena frontend](https://github.com/Adkid-Zephyr/arena402/tree/ce0ed
 
 ## Planning and delivery
 
-[PRD](./PRD.md) · [Development checklist](./DEVELOPMENT_TASKS.md) · [TEE readiness checklist](./TEE_PRECHECK.md) · [60-second storyboard](./DEMO_90S.md) · [Original planning entry](./PLANNING_README.md)
+[PRD](./PRD.md) · [Development checklist](./DEVELOPMENT_TASKS.md) · [TEE readiness checklist](./TEE_PRECHECK.md) · [75-second storyboard](./DEMO_90S.md) · [Original planning entry](./PLANNING_README.md)
 
 Recorded local-chain evidence may be displayed on a hosted read-only replay. It must stay labelled as a local recorded run and does not imply Injective testnet settlement.
 
@@ -90,6 +90,6 @@ Recorded local-chain evidence may be displayed on a hosted read-only replay. It 
 
 The frontend adapts the cobalt palette, condensed typography and editorial spacing of [Hermes Agent](https://hermes-agent.nousresearch.com), using the user-requested [clone-any-website skill](https://github.com/promptwhisper/clone-any-website-skill). The shield is original generated artwork; fonts are locally bundled Barlow Condensed and IBM Plex Mono under SIL OFL. No Hermes logo, commercial trial fonts, compiled source bundle or analytics is reused. This is an intentional brand adaptation, not a pixel-identical replica.
 
-Film music: **'Neon' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au**. [Track and license](https://www.scottbuckley.com.au/library/neon/). Include this credit in any YouTube upload description. Voice: disclosed synthesized English narration.
+Film music: **'Pursuit' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au**. [Track and license](https://www.scottbuckley.com.au/library/pursuit/). Include this credit in any YouTube upload description. Voice: disclosed synthesized English narration.
 
 Editable launch-film source: [`video/`](./video/README.md).

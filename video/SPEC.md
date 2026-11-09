@@ -1,7 +1,6 @@
-GOAL: Hit the failure in 4 seconds, deliver the compensation by 35 seconds.
-OUTPUT: 1920x1080, 30fps, 60s = 1800 frames. English voice 185wpm.
-LOOK: Bebas Neue display 170–230px; numbers 420px, IBM Plex Mono 28–30px. Cobalt #0000c2, loss coral #ff7367, compensation lime #d9ff75. No thin Bodoni numerals.
-MOTION: 17 editorial shots, 1.8–4.5s before the final 8s card. 16 alternating 15-frame cover/uncover bridges, three iris reveals, camera punches 1.2–1.38, word mask reveals 12 frames with 2-frame stagger. Fast transition departure power3.in, incoming power4.out; titles hold after landing. No blank first frame.
-SHOTS: One order → two payments → who pays → brand → reserve → retry → 79 → failure → funded promise → verify → 89 → receipts → terms → accountability → ecosystem → end.
-BANNED: ultra-thin serif numbers, 10-second static slides, crossfades, glow, particles, fake UI, completed Injective deployment claims, TEE verification claims.
-QA: Every scene midpoint, every seam +/-0.15s, loss 20.5s, payout 33s, terminal card57s. Decode final H264 frames; verify60.000s.
+GOAL:75-second execution guarantee film with audible high-energy drum-and-bass. Preserve the quick opening; add terms, operator capital and replay protection.
+OUTPUT:1920×1080,30fps,75s=2250frames.21 main shots,20 animated bridges. Bebas Neue titles170–230px,numbers420px,Plex28–30px.
+MUSIC:Pursuit by Scott Buckley,CC BY4.0; source78–153s. Beat analyzer reports107.2BPM; main seams snapped within140ms where possible. The strong115s source section meets the37s compensation reveal. Volume0.23 under narration,0.50 in gaps; fadeout1.5s. Narration185wpm.
+LOOK:Cobalt#0000c2,coral#ff7367,lime#d9ff75. Original shield and true local-chain recording. Transitions are15-frame cover/uncover sweeps and iris reveals; camera punches settle in14frames.
+BANNED:thin unreadable numerals,elongating the entire60s cut,unlicensed music,fake UI,claimed public Injective deployment or TEE connection.
+QA:13.8terms,25.8provider,38.5payout,43pool,56.5replay,70end; seam±0.15s; final decoded frames/audio/duration.

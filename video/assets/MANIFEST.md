@@ -13,3 +13,7 @@
 Music credit: 'Neon' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au
 
 Revision: fast-0.wav through fast-5.wav are original English narration, macOS Samantha at185wpm. fonts/bebas.ttf is Bebas Neue Regular from google/fonts ofl/bebasneue under SIL OFL; license bundled as Bebas-OFL.txt. Prior voice and serif assets remain as the first-cut source history.
+
+75-second revision: pursuit.mp3 is the new active music, downloaded from https://www.scottbuckley.com.au/library/wp-content/uploads/2017/02/sb_pursuit.mp3 ; license and attribution at https://www.scottbuckley.com.au/library/pursuit/ . Source78–153s; automated ducking0.23 beneath voice,0.50 in gaps,1.5s fade-out. drive-0.wav through drive-5.wav are original English narration, macOS Samantha185wpm. Prior music/voices remain historical assets only.
+
+Active music credit: 'Pursuit' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au

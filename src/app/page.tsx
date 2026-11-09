@@ -533,7 +533,7 @@ export default function Home() {
           <p className="eyebrow"><span /> BUILT FOR THE AGENT ECONOMY</p>
           <h1>The Agent<br/>Takes Action.<br/><em>We Back It.</em></h1>
           <p className="hero-copy">When an agent pays twice, who pays you back?<br/>A funded promise. A verifiable payout.</p>
-          <div className="hero-actions"><a href="#workspace">RUN THE DEMO <span>↗</span></a><a href="/demo/ArenaCover_Demo60s.mp4">WATCH THE FILM <span>▷</span></a></div>
+          <div className="hero-actions"><a href="#workspace">RUN THE DEMO <span>↗</span></a><a href="/demo/ArenaCover_Demo75s.mp4">WATCH THE FILM <span>▷</span></a></div>
           <p className="hero-caption">ARENА402 CONCEPT / EXECUTION GUARANTEES</p>
         </div>
         <div className="hero-art"><img src="/assets/guardian.webp" alt="Original chrome guardian shield with wings and orbital rings"/><span>CAPITAL BEFORE CONFIDENCE. / 001</span></div>

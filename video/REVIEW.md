@@ -1,11 +1,9 @@
-# 60-second revision review
+# 75-second music revision
 
-User feedback: replace thin title font, add transitions, shorten and increase energy.
+The active cut is75 seconds,21 shots and20 animated bridges. Adds premium/cover terms, operator responsibility, capital100→90 and one-payout protection to the quick60-second structure.
 
-Changes: 90→60 seconds; Bebas Neue replaces Bodoni in the active cut; 17 shots, 16 alternating cover/uncover sweeps, iris reveals, camera punches and masked word entrances. Voice is resynthesized at 185wpm, not accelerated audio. Actual transaction footage remains at natural speed with source in-points chosen around the confirmations.
+Music changes to Pursuit by Scott Buckley, licensedCC BY4.0. The author's official page describes energetic drum-and-bass, brass and lead synths. Beat detection reports107.2BPM; seams snap within140ms when possible. Source115s strong section meets the37s compensation reveal. Automated bed ducking preserves narration, then raises drums between spoken passages. Fade-out1.5s.
 
-Checked all scene midpoint contact sheets, initial seam at 1.8s, compensation seam at31s, and phone-scale beat sheet. Reading windows are intentionally short and copy is reduced. Final card holds8s while the guardian settles; small UI text is secondary to large summaries. No P0 remains in inspected frames.
+Reviewed all scene midpoint sheets and transition seam samples. The new terms, operator, payout, pool and replay shots fit their frames. Final card keeps truthful local-EVM/TEE status and the current music credit. Actual source payment footage remains unaccelerated. No P0 remains in inspected frames. Audio is measured rather than subjectively listened to.
 
-HyperFrames check passes lint, runtime, layout, contrast and audio with zero errors. The overlay transitions live in their own subcomposition. Public deployment remains a local-chain recorded proof; no TEE or completed Injective deployment is claimed. Audio is measured, not subjectively listened to.
-
-Decoded final33s confirms bold79→89 payoff. ffprobe:60.000s,H264/AAC,1920×1080,30fps,22,430,563bytes. Audio mean -17.1dB,peak -1.5dB.
+Final file:75.000s,1920×1080,30fps,H264/AAC,23,632,950bytes; peak -1.0dB. No clipping found by sample-level analysis.

@@ -4,7 +4,7 @@
 
 **자율 실행에는 책임이 필요합니다.** ArenaCover는 에이전트 결제의 실행 오류를 사전에 예치한 자본으로 보상하는 프로토타입입니다. 조건을 정하고, 보상금을 확보하고, 중복 결제를 검증한 뒤 초과 금액을 한 번만 지급합니다.
 
-[라이브 데모](https://arenacover-seoul-20261109.vercel.app) · [60초 영어 영상](https://arenacover-seoul-20261109.vercel.app/demo/ArenaCover_Demo60s.mp4)
+[라이브 데모](https://arenacover-seoul-20261109.vercel.app) · [75초 영어 영상](https://arenacover-seoul-20261109.vercel.app/demo/ArenaCover_Demo75s.mp4)
 
 ## 해커톤 MVP
 
@@ -64,4 +64,4 @@ Arena402를 fork하지 않은 신규 저장소입니다. 결제 단계와 영수
 
 Hermes Agent의 코발트색, 압축 서체와 편집형 레이아웃을 참고했습니다. 방패는 새로 생성한 원본 이미지이며 Barlow Condensed와 IBM Plex Mono(SIL OFL)를 로컬로 사용합니다. Hermes 로고, 상용 시험용 폰트 또는 추적 스크립트는 사용하지 않습니다.
 
-영상 음악: **'Neon' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au**. 영어 내레이션은 합성 음성입니다. YouTube 업로드 시 영상 설명에 음악 크레딧을 포함하세요. [음원과 라이선스](https://www.scottbuckley.com.au/library/neon/)
+영상 음악: **'Pursuit' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au**. 영어 내레이션은 합성 음성입니다. YouTube 업로드 시 영상 설명에 음악 크레딧을 포함하세요. [음원과 라이선스](https://www.scottbuckley.com.au/library/pursuit/)

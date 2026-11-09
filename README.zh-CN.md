@@ -4,7 +4,7 @@
 
 **自主执行需要明确担责。** ArenaCover 为 Agent 支付提供有预存资本支撑的执行保障。先约定规则，再锁定赔付资金；同一业务订单发生重复扣款时，由合约验证并一次性赔付超额部分。
 
-[在线演示](https://arenacover-seoul-20261109.vercel.app) · [60 秒英文视频](https://arenacover-seoul-20261109.vercel.app/demo/ArenaCover_Demo60s.mp4)
+[在线演示](https://arenacover-seoul-20261109.vercel.app) · [75 秒英文视频](https://arenacover-seoul-20261109.vercel.app/demo/ArenaCover_Demo75s.mp4)
 
 ## 黑客松 MVP
 
@@ -64,4 +64,4 @@ npm run dev
 
 界面参考 Hermes Agent 的电蓝、窄体大字与版式，盾牌为原创生成图；使用本地 SIL OFL 字体 Barlow Condensed、IBM Plex Mono。无 Hermes 标志、商业试用字体或追踪脚本。
 
-视频配乐：**'Neon' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au**。英文旁白为合成语音。上传 YouTube 时请将该音乐署名放进视频简介。[原曲与授权](https://www.scottbuckley.com.au/library/neon/)
+视频配乐：**'Pursuit' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au**。英文旁白为合成语音。上传 YouTube 时请将该音乐署名放进视频简介。[原曲与授权](https://www.scottbuckley.com.au/library/pursuit/)

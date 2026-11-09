@@ -1,0 +1,16 @@
+Title: ArenaCover | Who Pays When Your Agent Fails? | 75-Second Demo
+
+ArenaCover turns responsibility for agent payment failures into a prefunded execution guarantee. One order. Two payments. A verifiable payout from reserved capital.
+
+Built for Injective EVM Testnet (chain 1439), with Arena402 as the intended first integration. This recorded MVP proof runs on local EVM chain 31337; public testnet deployment is not claimed. TEE verification is not connected. DemoUSD tokens have no monetary value. Market losses are excluded.
+
+Live demo: https://arenacover-seoul-20261109.vercel.app
+GitHub (English / 한국어 / 中文): https://github.com/sunruize93-cmyk/arenacover-seoul-20261109
+
+Music: 'Pursuit' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au
+Track and license: https://www.scottbuckley.com.au/library/pursuit/
+Music excerpt starts at 78 seconds; edited and mixed beneath narration.
+
+Original generated shield artwork. Synthesized English narration. Actual local smart-contract payments and compensation are shown.
+
+Built for c0mpiled-17 Seoul, Crypto track.
