@@ -2,9 +2,9 @@
 
 [English](./README.md) · [한국어](./README.ko.md) · [中文](./README.zh-CN.md)
 
-[![ArenaCover — Who pays?](./public/assets/film-poster.jpg)](https://arenacover-seoul-20261109.vercel.app/demo/ArenaCover_Demo90s.mp4)
+[![ArenaCover — Who pays?](./public/assets/film-poster.jpg)](https://arenacover-seoul-20261109.vercel.app/demo/ArenaCover_Demo60s.mp4)
 
-**[Live demo](https://arenacover-seoul-20261109.vercel.app) · [90-second English film](https://arenacover-seoul-20261109.vercel.app/demo/ArenaCover_Demo90s.mp4)**
+**[Live demo](https://arenacover-seoul-20261109.vercel.app) · [60-second English film](https://arenacover-seoul-20261109.vercel.app/demo/ArenaCover_Demo60s.mp4)**
 
 > **Built for Injective EVM Testnet (chain 1439).** The current recorded proof runs on local EVM chain 31337. Testnet deployment tooling is ready; public testnet deployment has not been completed.
 
@@ -37,7 +37,7 @@ Each deployment supports one order. Run `npm run deploy:local` to prepare anothe
 - `node scripts/browser-check.mjs` — exercises a fresh local deployment in Chromium; writes confirmed receipts and screenshots. Install Chromium with `npx playwright install chromium` first.
 - `node scripts/recovery-check.mjs` — verifies that a reload recovers a confirmed payout receipt before clearing pending state.
 - `npm run scenario` — terminal execution of a fresh deployment, with machine-readable evidence.
-- `node scripts/record-demo.mjs` then `node scripts/render-demo.mjs` — records a fresh deployment for 90 seconds and adds disclosed macOS synthesized English narration. The renderer requires the local Python package imageio-ffmpeg.
+- `node scripts/record-demo.mjs` then `node scripts/render-demo.mjs` — records a fresh deployment for 60 seconds and adds disclosed macOS synthesized English narration. The renderer requires the local Python package imageio-ffmpeg.
 
 [Verification record](./VERIFICATION.md) · [Confirmed run JSON](./public/evidence/run.json) · [TEE check result](./TEE_CHECK_RESULT.md)
 
@@ -69,7 +69,7 @@ References: [Arena frontend](https://github.com/Adkid-Zephyr/arena402/tree/ce0ed
 
 ## Planning and delivery
 
-[PRD](./PRD.md) · [Development checklist](./DEVELOPMENT_TASKS.md) · [TEE readiness checklist](./TEE_PRECHECK.md) · [90-second storyboard](./DEMO_90S.md) · [Original planning entry](./PLANNING_README.md)
+[PRD](./PRD.md) · [Development checklist](./DEVELOPMENT_TASKS.md) · [TEE readiness checklist](./TEE_PRECHECK.md) · [60-second storyboard](./DEMO_90S.md) · [Original planning entry](./PLANNING_README.md)
 
 Recorded local-chain evidence may be displayed on a hosted read-only replay. It must stay labelled as a local recorded run and does not imply Injective testnet settlement.
 

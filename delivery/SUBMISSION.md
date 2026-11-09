@@ -8,7 +8,7 @@ Description: ArenaCover turns agent payment responsibility into a prefunded exec
 
 GitHub: https://github.com/sunruize93-cmyk/arenacover-seoul-20261109
 
-English 90-second film: https://arenacover-seoul-20261109.vercel.app/demo/ArenaCover_Demo90s.mp4
+English 60-second film: https://arenacover-seoul-20261109.vercel.app/demo/ArenaCover_Demo60s.mp4
 
 Live app: https://arenacover-seoul-20261109.vercel.app
 

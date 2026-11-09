@@ -2,5 +2,12 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "buildCommand": "npm run build",
-  "installCommand": "npm ci"
+  "installCommand": "npm ci",
+  "redirects": [
+    {
+      "source": "/demo/ArenaCover_Demo90s.mp4",
+      "destination": "/demo/ArenaCover_Demo60s.mp4",
+      "permanent": false
+    }
+  ]
 }

@@ -1,11 +1,11 @@
-0s: Your agent just paid twice. One order. Two transfers. When AI moves your money, who takes the hit?
+0s: One order. Two payments. When an agent gets it wrong, who pays? Meet Arena Cover.
 
-12s: Meet Arena Cover. A funded promise before an agent touches capital. One premium. Ten tokens reserved. Explicit responsibility, enforced by code.
+9s: A funded promise before execution. Ten tokens reserved. Responsibility starts with capital.
 
-26s: Watch the failure. Ten tokens leave the wallet. Then a retry bug charges the same order again. The balance drops to seventy nine. Two confirmed payments. One authorized order. The extra debit is the covered event.
+15s: First payment. Then a retry bug. The same order gets charged again. Ninety nine becomes seventy nine. The agent failed. The promise did not.
 
-45s: Now, the promise pays. The contract verifies the excess and returns ten tokens from the reserved pool. Seventy nine becomes eighty nine. Not a support ticket. A confirmed transfer. Every step leaves a receipt.
+27s: The contract verifies the excess and sends ten back. Seventy nine becomes eighty nine. Compensation, confirmed.
 
-68s: Built for Injective EVM Testnet. This recorded proof runs on a local EVM. Market losses are excluded. T E E verification is not connected in this build.
+35s: Four receipts. Every step verifiable. We cover duplicate execution, not market losses. Precise terms. Reserved capital.
 
-80s: Arena Cover. Built with Arena Four Oh Two in mind. Autonomy needs accountability. Make the promise. Fund the responsibility.
+44s: Capital. Code. Accountability. Built for Injective EVM Testnet, with Arena Four Oh Two in mind. This proof runs locally. T E E is not connected. Arena Cover. Autonomy needs accountability.

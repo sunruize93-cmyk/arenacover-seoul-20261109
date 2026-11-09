@@ -39,3 +39,9 @@
 See [visual adaptation record](./VISUAL_ADAPTATION.md) for the intentionally approximate reference comparison.
 
 Final MP4 verified with ffprobe: H.264, 1920×1080, 30 fps, AAC, duration 90.000 seconds, 23,639,515 bytes. Decoded 29s fault and 54s payout frames inspected. Audio mean -17.7 dB and peak -1.6 dB; no digital clipping detected. Audio presence and levels were checked computationally, not subjectively listened to.
+
+## Faster 60-second revision
+
+Supersedes the earlier 90-second delivery: Bebas Neue title/number typography,17 shots,16 animated cover/uncover transitions, iris reveals and camera punches. All scene midpoint sheets, phone sheet, seam samples and decoded final frames were inspected. Source clips preserve natural transaction timing.
+
+Final MP4: H.264/AAC,1920×1080,30fps,60.000s,22,430,563 bytes. Mean audio -17.1dB,peak -1.5dB. HyperFrames check passes with zero errors. Public link ends Demo60s.mp4; the previous90s URL redirects to it.

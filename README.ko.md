@@ -4,7 +4,7 @@
 
 **자율 실행에는 책임이 필요합니다.** ArenaCover는 에이전트 결제의 실행 오류를 사전에 예치한 자본으로 보상하는 프로토타입입니다. 조건을 정하고, 보상금을 확보하고, 중복 결제를 검증한 뒤 초과 금액을 한 번만 지급합니다.
 
-[라이브 데모](https://arenacover-seoul-20261109.vercel.app) · [90초 영어 영상](https://arenacover-seoul-20261109.vercel.app/demo/ArenaCover_Demo90s.mp4)
+[라이브 데모](https://arenacover-seoul-20261109.vercel.app) · [60초 영어 영상](https://arenacover-seoul-20261109.vercel.app/demo/ArenaCover_Demo60s.mp4)
 
 ## 해커톤 MVP
 
