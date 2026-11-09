@@ -199,4 +199,4 @@ game-demo、agent-conversation、GameResult、AgentConversationViewer 和 ExpoBr
 - [x] 中英韩三语 README、英文 90 秒视频、可编辑视频源工程。
 - [x] TEE 检查无现成可验证接口，明确 Not connected。
 - [ ] Injective 测试网实际部署：用户主动暂缓测试币，保留 chain 1439 部署工具。
-- [ ] 比赛表单最终提交：交付现成粘贴内容与公开链接，由用户填写参赛人信息后提交。
+- [x] 比赛表单最终提交：用户确认姓名、邮箱、Later 与 YouTube 条款后已完成；YouTube 显示 Video published，表单显示 Your response has been recorded。

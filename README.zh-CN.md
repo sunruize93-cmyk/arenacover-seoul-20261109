@@ -4,7 +4,7 @@
 
 **自主执行需要明确担责。** ArenaCover 为 Agent 支付提供有预存资本支撑的执行保障。先约定规则，再锁定赔付资金；同一业务订单发生重复扣款时，由合约验证并一次性赔付超额部分。
 
-[在线演示](https://arenacover-seoul-20261109.vercel.app) · [75 秒英文视频](https://arenacover-seoul-20261109.vercel.app/demo/ArenaCover_Demo75s.mp4)
+[在线演示](https://arenacover-seoul-20261109.vercel.app) · [75 秒英文视频](https://youtu.be/0WrEHcNbB64)
 
 ## 黑客松 MVP
 

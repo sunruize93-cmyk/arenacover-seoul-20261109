@@ -8,10 +8,10 @@ Description: ArenaCover turns agent payment responsibility into a prefunded exec
 
 GitHub: https://github.com/sunruize93-cmyk/arenacover-seoul-20261109
 
-English 75-second film: https://arenacover-seoul-20261109.vercel.app/demo/ArenaCover_Demo75s.mp4
+English 75-second film: https://youtu.be/0WrEHcNbB64
 
 Live app: https://arenacover-seoul-20261109.vercel.app
 
 Music credit for YouTube description: 'Pursuit' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au
 
-The entry has not been submitted automatically. Fill your entrant name, contact email and YC application preference yourself.
+Submitted successfully through the organizer Google Form on November9,2026. The confirmation page displayed: “Your response has been recorded.” Crypto track selected; YC application preference: Later. YouTube visibility: Unlisted. Publication was confirmed by YouTube's “Video published” dialog.

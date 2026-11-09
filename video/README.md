@@ -17,3 +17,5 @@ Music: **'Pursuit' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley
 Current proof is local EVM chain 31337. Injective EVM Testnet 1439 is the deployment target; no public deployment is claimed. TEE is not connected.
 
 The camera wrapper adapts the anchoring approach of HyperFrames `ui-focus-zoom`; the original registry component is retained in compositions/components for reference.
+
+Published YouTube film (unlisted,viewable with link): https://youtu.be/0WrEHcNbB64

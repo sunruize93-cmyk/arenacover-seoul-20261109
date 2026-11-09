@@ -2,9 +2,9 @@
 
 [English](./README.md) · [한국어](./README.ko.md) · [中文](./README.zh-CN.md)
 
-[![ArenaCover — Who pays?](./public/assets/film-poster.jpg)](https://arenacover-seoul-20261109.vercel.app/demo/ArenaCover_Demo75s.mp4)
+[![ArenaCover — Who pays?](./public/assets/film-poster.jpg)](https://youtu.be/0WrEHcNbB64)
 
-**[Live demo](https://arenacover-seoul-20261109.vercel.app) · [75-second English film](https://arenacover-seoul-20261109.vercel.app/demo/ArenaCover_Demo75s.mp4)**
+**[Live demo](https://arenacover-seoul-20261109.vercel.app) · [75-second English film](https://youtu.be/0WrEHcNbB64)**
 
 > **Built for Injective EVM Testnet (chain 1439).** The current recorded proof runs on local EVM chain 31337. Testnet deployment tooling is ready; public testnet deployment has not been completed.
 

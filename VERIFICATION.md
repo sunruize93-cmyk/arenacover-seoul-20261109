@@ -51,3 +51,7 @@ Final MP4: H.264/AAC,1920×1080,30fps,60.000s,22,430,563 bytes. Mean audio -17.1
 Supersedes60s:21 main shots,20 animated bridges,new terms/operator-capital/replay-protection beats. Active music is Pursuit by Scott Buckley(CC BY4.0),source78–153s,with automated narration ducking and1.5s fade-out. License/credit updated in film,three README files and source manifest.
 
 ffprobe:H264/AAC,1920×1080,30fps,75.000s,23,632,950bytes. Audio peak -1.0dB. HyperFrames check passes with zero errors. Scene midpoint contact sheets and seam samples inspected; final39s payout frame decoded. Audio measured,not subjectively listened to.
+
+## Publishing and submission
+
+YouTube URL:https://youtu.be/0WrEHcNbB64 . YouTube showed “Video published” after saving Unlisted visibility. The organizer Google Form then displayed “Your response has been recorded.” The submitted video URL is the YouTube URL above; track is The Best Time to Build in Crypto; YC preference is Later. Screenshots are preserved in delivery/Submission_Confirmation.png and delivery/YouTube_Published.png.
