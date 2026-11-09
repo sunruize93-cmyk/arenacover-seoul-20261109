@@ -81,6 +81,34 @@ function client(d: Deployment) {
     pollingInterval: 300,
   });
 }
+function persistReceipt(
+  d: Deployment,
+  action: string,
+  hash: Hash,
+  block: bigint,
+  balance: bigint,
+): Receipt[] {
+  let cached: Receipt[] = [];
+  try {
+    const saved = JSON.parse(localStorage.getItem(storageKey(d)) ?? "[]");
+    if (Array.isArray(saved)) cached = saved;
+  } catch {
+    /* replace malformed cache */
+  }
+  if (action !== "approve") {
+    const item: Receipt = {
+      action,
+      hash,
+      block: String(block),
+      balance: amount(balance),
+    };
+    cached = [...cached.filter((x) => x.hash !== hash), item];
+    localStorage.setItem(storageKey(d), JSON.stringify(cached));
+  }
+  // Only clear pending AFTER the receipt has been persisted.
+  localStorage.removeItem(`${storageKey(d)}:pending`);
+  return cached;
+}
 async function read(d: Deployment): Promise<Snapshot> {
   if (!d.cover || !d.token || !d.user)
     throw new Error("Deploy the demo contracts first.");
@@ -221,6 +249,35 @@ export default function Home() {
         if (cancelled) return;
         setState(s);
         setObserved(true);
+        const pending = localStorage.getItem(`${storageKey(d)}:pending`);
+        if (pending) {
+          const item = JSON.parse(pending);
+          try {
+            const confirmed = await client(d).getTransactionReceipt({
+              hash: item.hash,
+            });
+            if (confirmed.status === "success")
+              setReceipts(
+                persistReceipt(
+                  d,
+                  item.action,
+                  item.hash,
+                  confirmed.blockNumber,
+                  s.balance,
+                ),
+              );
+            else {
+              localStorage.removeItem(`${storageKey(d)}:pending`);
+              setNotice(
+                "Previous transaction reverted; no payment was recorded.",
+              );
+            }
+          } catch {
+            setNotice(
+              "A broadcast transaction is still unresolved. Its hash is retained; do not resend it.",
+            );
+          }
+        }
         try {
           const saved = JSON.parse(localStorage.getItem(storageKey(d)) ?? "[]");
           if (Array.isArray(saved))
@@ -370,26 +427,17 @@ export default function Home() {
         hash,
         timeout: 60000,
       });
-      localStorage.removeItem(`${storageKey(d)}:pending`);
-      if (receipt.status !== "success")
+      if (receipt.status !== "success") {
+        localStorage.removeItem(`${storageKey(d)}:pending`);
         throw new Error(
           "Transaction reverted. No successful payment recorded.",
         );
+      }
       const s = await read(d);
       setState(s);
-      if (functionName !== "approve") {
-        const item: Receipt = {
-          action: functionName,
-          hash,
-          block: String(receipt.blockNumber),
-          balance: amount(s.balance),
-        };
-        setReceipts((prev) => {
-          const next = [...prev.filter((x) => x.hash !== hash), item];
-          localStorage.setItem(storageKey(d), JSON.stringify(next));
-          return next;
-        });
-      }
+      setReceipts(
+        persistReceipt(d, functionName, hash, receipt.blockNumber, s.balance),
+      );
     }
     try {
       const pending = localStorage.getItem(`${storageKey(d)}:pending`);
@@ -400,12 +448,23 @@ export default function Home() {
           hash: item.hash,
           timeout: 15000,
         });
-        localStorage.removeItem(`${storageKey(d)}:pending`);
-        setState(await read(d));
-        if (r.status !== "success")
+        const recovered = await read(d);
+        setState(recovered);
+        if (r.status !== "success") {
+          localStorage.removeItem(`${storageKey(d)}:pending`);
           throw new Error(
             "The previous transaction reverted. State reconciled; retry the unfinished step.",
           );
+        }
+        setReceipts(
+          persistReceipt(
+            d,
+            item.action,
+            item.hash,
+            r.blockNumber,
+            recovered.balance,
+          ),
+        );
         setNotice(
           "Previous transaction confirmed. State reconciled; click the next action to continue.",
         );
@@ -560,6 +619,12 @@ export default function Home() {
             <div>
               <dt>Beneficiary</dt>
               <dd title={deployment?.user}>{short(deployment?.user)}</dd>
+            </div>
+            <div>
+              <dt>Operator / payee</dt>
+              <dd title={deployment?.operator}>
+                {short(deployment?.operator)}
+              </dd>
             </div>
           </dl>
           <div className="exclusion">

@@ -9,6 +9,16 @@ import { mnemonicToAccount, privateKeyToAccount } from "viem/accounts";
 const c = JSON.parse(fs.readFileSync("public/deployment.json", "utf8"));
 const abi = JSON.parse(fs.readFileSync("src/lib/abi.json", "utf8"));
 const local = c.mode === "local";
+if (!["local", "testnet"].includes(c.mode))
+  throw new Error("Unknown network mode");
+if (
+  local &&
+  (c.chainId !== 31337 ||
+    !["127.0.0.1", "localhost"].includes(new URL(c.rpcUrl).hostname))
+)
+  throw new Error("Sandbox signing is restricted to localhost chain 31337");
+if (!local && c.chainId !== 1439)
+  throw new Error("Only Injective testnet 1439 is supported");
 const user = local
   ? mnemonicToAccount(
       "test test test test test test test test test test test junk",
@@ -30,6 +40,8 @@ const pub = createPublicClient({
 });
 const wallet = createWalletClient({ chain, account: user, transport: http() });
 if ((await pub.getChainId()) !== c.chainId) throw new Error("Wrong chain");
+if (user.address.toLowerCase() !== c.user.toLowerCase())
+  throw new Error("Demo user does not match deployment");
 const steps = [];
 const balance = () =>
   pub.readContract({
