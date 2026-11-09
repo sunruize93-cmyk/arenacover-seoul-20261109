@@ -42,7 +42,7 @@ if (process.argv[1]?.endsWith("/compile.mjs")) {
   fs.mkdirSync("artifacts", { recursive: true });
   const artifacts = compile();
   for (const [name, data] of Object.entries(artifacts))
-    fs.writeFileSync(`artifacts/${name}.json`, JSON.stringify(data, null, 2));
+    fs.writeFileSync(`artifacts/${name}.json`, JSON.stringify(data, null, 2) + "\n");
   fs.mkdirSync("src/lib", { recursive: true });
   fs.writeFileSync(
     "src/lib/abi.json",
@@ -50,7 +50,7 @@ if (process.argv[1]?.endsWith("/compile.mjs")) {
       { token: artifacts.DemoUSD.abi, cover: artifacts.ArenaCoverDemo.abi },
       null,
       2,
-    ),
+    ) + "\n",
   );
   console.log("Compiled DemoUSD and ArenaCoverDemo (Paris EVM).");
 }
