@@ -524,56 +524,22 @@ export default function Home() {
   return (
     <main>
       <header className="nav">
-        <a className="brand" href="/" aria-label="ArenaCover home">
-          <span className="brand-icon">
-            <Shield />
-          </span>
-          Arena<span>Cover</span>
-        </a>
-        <div className="nav-right">
-          <span className="edition">BUILT FOR AGENT FINANCE</span>
-          <span className="network">
-            <i />
-            {deployment?.mode === "testnet"
-              ? "Injective testnet"
-              : deployment?.mode === "local"
-                ? "Local EVM sandbox"
-                : "Loading network"}
-            {replay ? " · REPLAY" : ""}
-          </span>
-        </div>
+        <div className="nav-links"><a href="#workspace">THE PROMISE</a><a href="#evidence">THE PROOF</a></div>
+        <a className="brand" href="/" aria-label="ArenaCover home">ARENA<br/>COVER<span className="brand-star">✳</span></a>
+        <a className="nav-cta" href="#workspace">OPEN DEMO ↗</a>
       </header>
       <section className="hero">
-        <div>
-          <p className="eyebrow">
-            <span /> EXECUTION GUARANTEES FOR THE AGENT ECONOMY
-          </p>
-          <h1>
-            Autonomy needs
-            <br />
-            <em>accountability.</em>
-          </h1>
-          <p className="hero-copy">
-            When an agent pays twice, who pays you back?
-            <br />
-            Clear terms. Reserved capital. Verifiable compensation.
-          </p>
+        <div className="hero-content">
+          <p className="eyebrow"><span /> BUILT FOR THE AGENT ECONOMY</p>
+          <h1>The Agent<br/>Takes Action.<br/><em>We Back It.</em></h1>
+          <p className="hero-copy">When an agent pays twice, who pays you back?<br/>A funded promise. A verifiable payout.</p>
+          <div className="hero-actions"><a href="#workspace">RUN THE DEMO <span>↗</span></a><a href="/demo/ArenaCover_Demo90s.mp4">WATCH THE FILM <span>▷</span></a></div>
+          <p className="hero-caption">ARENА402 CONCEPT / EXECUTION GUARANTEES</p>
         </div>
-        <div className="hero-note">
-          <span className="note-number">01</span>
-          <p>
-            One order.
-            <br />
-            One funded promise.
-          </p>
-          <span className="fine">
-            Arena402 integration concept
-            <br />
-            Controlled execution demo
-          </span>
-        </div>
+        <div className="hero-art"><img src="/assets/guardian.webp" alt="Original chrome guardian shield with wings and orbital rings"/><span>CAPITAL BEFORE CONFIDENCE. / 001</span></div>
       </section>
-      <section className="workspace" aria-label="Execution guarantee dashboard">
+      <div className="section-strip"><span>01 / A PROMISE WITH CAPITAL BEHIND IT</span><span className="network"><i />{deployment?.mode === "testnet" ? "INJECTIVE TESTNET" : "LOCAL EVM SANDBOX"}{replay ? " · REPLAY" : ""}</span></div>
+      <section id="workspace" className="workspace" aria-label="Execution guarantee dashboard">
         <article className="panel policy">
           <div className="panel-label">
             <span>01 / THE PROMISE</span>

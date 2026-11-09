@@ -1,0 +1,1 @@
+The agent pays twice. Who pays? Operator capital precedes execution. A retry bug costs ten extra tokens. The contract restores ten. Four receipts make the promise inspectable. ArenaCover: autonomy needs accountability. Local EVM evidence; Injective EVM Testnet target.

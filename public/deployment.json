@@ -6,15 +6,15 @@
   "explorer": null,
   "operator": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
   "user": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
-  "token": "0x5fbdb2315678afecb367f032d93f642f64180aa3",
-  "cover": "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512",
-  "orderId": "0xf23ab5864e050ff244eb9bb89de57a512ee4af6063ea86309ba63d267de02a1e",
-  "termsHash": "0xdbbc3b4e8e39d935fc002863861b519f1dda0e71a1e69bb85b170617ec7c1379",
-  "deployedAt": "2026-11-09T05:14:22.818Z",
+  "token": "0xa51c1fc2f0d1a1b8494ed1fe312d7c3a78ed91c0",
+  "cover": "0x0dcd1bf9a1b36ce34237eeafef220932846bcd82",
+  "orderId": "0x2641b68e43e408dd69ff1742d56899994c4dfcbc4d2446a31a66a1e4a5fb1794",
+  "termsHash": "0xa564bcc3bbb93e3dd04d70840cfdc1a2b2ce40145e4e1b8e218add7615495b8d",
+  "deployedAt": "2026-11-09T05:42:41.248Z",
   "deploymentTransactions": {
-    "DemoUSD": "0x502a87ef42459f6fef010e00631200b3ec7c394d4f1b2250227541c8afc3bd6a",
-    "ArenaCoverDemo": "0xfa0995691fb74be36def62a66f5b20ccbcab87e97e7f97a3ca73acde04fac95a",
-    "approveCapital": "0xc0db9f69fc628bf9436fc96345485989fb6b9333bf64f339bee43271393c5b20",
-    "fund": "0xdb33bb40f69fc64ab9bab382b3cd275d7a7bdb6a46b98e67978de62ad3f7b6c5"
+    "DemoUSD": "0x10d063f0265a08637c235ceb2ac5c10997e40a63ac7ca709b5c231bd18b02eb3",
+    "ArenaCoverDemo": "0xee418116a30159565e54295ce3dc3e0d06e045f60d250ab8022ade112c7314bf",
+    "approveCapital": "0x76964af9fa2922abd36af55f5d44a669bf0940d19a99f244962da28f7d0a914b",
+    "fund": "0x569f2a8949abe0843d0b08c21df300873898b6da9b482845d0c81575bff513f9"
   }
 }

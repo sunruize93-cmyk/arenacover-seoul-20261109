@@ -3,6 +3,7 @@ node_modules/
 .env
 .env.*
 !.env.example
+delivery/ArenaCover_Raw.webm
 .local/
 .vercel/
 test-results/
@@ -12,3 +13,8 @@ artifacts/
 .env*
 
 !.env.example
+video/.hyperframes/
+video/node_modules/
+video/renders/
+
+delivery/ArenaCover_Demo90s.mp4
