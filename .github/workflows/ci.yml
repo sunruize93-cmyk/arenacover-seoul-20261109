@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "contracts/**"
+      - "scripts/**"
+      - "src/**"
+      - "tests/**"
+      - "package*.json"
+      - "tsconfig.json"
+      - "next.config.*"
+      - ".github/workflows/ci.yml"
+  pull_request:
+    paths:
+      - "contracts/**"
+      - "scripts/**"
+      - "src/**"
+      - "tests/**"
+      - "package*.json"
+      - "tsconfig.json"
+      - "next.config.*"
+      - ".github/workflows/ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Contracts, types and production build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Node.js 22
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - name: Compile contracts and verify committed ABIs
+        run: |
+          npm run compile:contracts
+          git diff --exit-code -- src/lib/abi.json
+      - name: Run contract and signing-fence tests
+        run: npm test
+      - name: Type check
+        run: npm run typecheck
+      - name: Build production frontend
+        run: npm run build

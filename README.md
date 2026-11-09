@@ -2,94 +2,119 @@
 
 [English](./README.md) · [한국어](./README.ko.md) · [中文](./README.zh-CN.md)
 
-[![ArenaCover — Who pays?](./public/assets/film-poster.jpg)](https://youtu.be/0WrEHcNbB64)
+[![ArenaCover — The agent acts. Who pays?](./.github/assets/cover.png)](https://youtu.be/0WrEHcNbB64)
 
-**[Live demo](https://arenacover-seoul-20261109.vercel.app) · [75-second English film](https://youtu.be/0WrEHcNbB64)**
+### When an agent pays twice, who pays you back?
 
-> **Built for Injective EVM Testnet (chain 1439).** The current recorded proof runs on local EVM chain 31337. Testnet deployment tooling is ready; public testnet deployment has not been completed.
+**A prefunded execution guarantee for agent payments.** The operator makes the promise. The contract reserves the capital. A verified duplicate debit can be compensated once from the reserved capital.
 
-**Autonomy needs accountability.** A prefunded execution guarantee for agent payments, built for c0mpiled Seoul on November 9, 2026.
+**[▶ Watch the 75-second film](https://youtu.be/0WrEHcNbB64) · [↗ Open the live demo](https://arenacover-seoul-20261109.vercel.app) · [Inspect the receipts](./public/evidence/run.json)**
 
-A fixed business order permits one 10 DemoUSD payment. An explicit fault harness charges it twice; the guarantee checks confirmed contract state and compensates the extra 10 from the operator’s prefunded reserve.
+[![CI](https://github.com/sunruize93-cmyk/arenacover-seoul-20261109/actions/workflows/ci.yml/badge.svg)](https://github.com/sunruize93-cmyk/arenacover-seoul-20261109/actions/workflows/ci.yml) &nbsp; Solidity · Next.js · viem · c0mpiled Seoul 2026
 
-## Why this matters
+*Recorded proof: local EVM, chain 31337. Deployment target: Injective EVM Testnet, chain 1439. The hosted app is a labelled, read-only replay.*
 
-Agents can execute payments. Someone still has to own an execution failure. ArenaCover turns a narrow responsibility promise into a funded, deterministic payout: agree the limit, reserve capital, verify the excess, compensate once. Arena402 is the first intended integration target.
+## A promise you can inspect
 
-## Run locally
+Agents can move capital. Execution responsibility should be explicit before they do.
 
-Requires Node.js 22 or newer. No personal wallet, real assets, database, or external API key is needed for the local sandbox.
+| Fund first | Verify the excess | Pay once |
+| --- | --- | --- |
+| The operator prefunds 100 DemoUSD; 10 is reserved before execution. | One business order permits one 10-token debit. A controlled retry creates a second. | The contract returns the extra 10 and closes the claim. |
 
-1. Run `npm ci` and `npm run compile:contracts`.
-2. In one terminal run `npm run chain` (localhost only, chain 31337).
-3. In a second terminal run `npm run deploy:local`.
-4. Run `npm run dev` and open [the local app](http://127.0.0.1:3000).
-5. Connect the sandbox wallet, protect the trade, run the controlled fault, and verify compensation.
+Arena402 is the intended first integration target. This MVP isolates the responsibility layer: a fixed order, clear limits, reserved capital and inspectable settlement.
 
-The sandbox uses a publicly known development mnemonic, and signing is fenced to a localhost webpage, localhost RPC and chain 31337. Never fund these development accounts on public networks. Testnet deployment uses separately generated wallets stored only in the ignored `.local` directory.
+## The moment the promise pays
 
-Each deployment supports one order. Run `npm run deploy:local` to prepare another; existing chain records are preserved.
+[![Animated preview: duplicate debit followed by 10 DemoUSD compensation](./.github/assets/payout-preview.gif)](https://youtu.be/0WrEHcNbB64)
 
-## Verify
+*Six-second silent preview from the actual film. [Watch with music and narration →](https://youtu.be/0WrEHcNbB64)*
 
-- `npm test` — six contract behavior tests and three signing-network fence tests.
-- `npm run typecheck` and `npm run build` — frontend checks.
-- `node scripts/browser-check.mjs` — exercises a fresh local deployment in Chromium; writes confirmed receipts and screenshots. Install Chromium with `npx playwright install chromium` first.
-- `node scripts/recovery-check.mjs` — verifies that a reload recovers a confirmed payout receipt before clearing pending state.
-- `npm run scenario` — terminal execution of a fresh deployment, with machine-readable evidence.
-- `node scripts/record-demo.mjs` then `node scripts/render-demo.mjs` — records a fresh deployment for 75 seconds and adds disclosed macOS synthesized English narration. The renderer requires the local Python package imageio-ffmpeg.
+| User balance | Operator pool | Evidence |
+| --- | --- | --- |
+| **79 → 89** after compensation | **100 → 90** | **4 confirmed transaction receipts** |
 
-[Verification record](./VERIFICATION.md) · [Confirmed run JSON](./public/evidence/run.json) · [TEE check result](./TEE_CHECK_RESULT.md)
+Full path: **100 → 99** (fee) **→ 89** (payment) **→ 79** (duplicate) **→ 89** (compensation). All amounts are valueless DemoUSD test tokens.
 
-## Testnet deployment
+## The working product
 
-`npm run deploy:testnet` prepares separate local testnet wallets and prints only their addresses. Fund the operator through the [official Injective testnet faucet](https://testnet.faucet.injective.network/) and rerun the command. It checks chain 1439, deploys two contracts, seeds test tokens, and funds the user’s test gas. Existing deployment credentials can instead be supplied in an untracked `.env.local`; see `.env.example`. Never commit secrets.
+[![ArenaCover dashboard: compensated user, funded reserve and receipt trail](./.github/assets/product.png)](https://arenacover-seoul-20261109.vercel.app)
 
-This is deployment tooling, not evidence that testnet deployment completed. Check the active `public/deployment.json` and verification record for actual network status.
+Protect the order → run the controlled fault → verify and compensate. Run locally to execute these actions; the hosted replay lets reviewers inspect the recorded result immediately.
 
-## Historical Arena402 testnet wallets
+```mermaid
+flowchart LR
+    A[Agree the limit] --> B[Reserve 10]
+    B --> C[Execute 10 + retry 10]
+    C --> D[Verify the excess]
+    D --> E[Compensate 10 once]
+```
 
-Network: **Injective EVM Testnet · chain ID 1439**.
+Two contracts keep the scope small: [`DemoUSD` and `ArenaCoverDemo`](./contracts/ArenaCover.sol). Execution and guarantee share one demo contract. [Read the architecture and trust boundary](./docs/ARCHITECTURE.md).
+
+## Try it locally
+
+Node.js **22+**. Terminal 1:
+
+```bash
+npm ci
+npm run compile:contracts
+npm run chain
+```
+
+Terminal 2:
+
+```bash
+npm run deploy:local
+npm run dev
+```
+
+Open [localhost:3000](http://127.0.0.1:3000). Connect the sandbox wallet, protect the trade, run the fault and claim compensation. Each deployment supports one order; redeploy to reset. Sandbox accounts use a public development mnemonic: keep them local and never fund them with real assets.
+
+## Verify the result
+
+```bash
+npm test
+npm run typecheck
+npm run build
+```
+
+The suite includes **6 contract behavior tests and 3 signing-network fence tests**. GitHub Actions runs these checks and the production build. Browser evidence records four successful transactions and final balances of **89 / 90**, with reserve **0**.
+
+[Verification record](./VERIFICATION.md) · [Run JSON](./public/evidence/run.json) · [Deployment metadata](./public/deployment.json)
+
+## Current scope
+
+| Capability | Status |
+| --- | --- |
+| Local EVM payments, reserve and compensation | Implemented and demonstrated |
+| Hosted dashboard + 75-second English film | Live; three README languages |
+| Injective EVM Testnet deployment tooling | Ready; public testnet deployment pending |
+| Arena402 | Intended integration; settlement/evidence design reference |
+| TEE / x402 | Not connected in this build |
+
+Coverage is limited to this demo's duplicate business payment. Market losses, strategy performance, expiry and multi-order underwriting are outside the MVP. This is a prototype, not a licensed insurance product or an independent external-agent oracle.
+
+## Explore the project
+
+| Start here | Go deeper |
+| --- | --- |
+| [Reviewer quick tour](./docs/REVIEWER_GUIDE.md) | [Architecture and contract flow](./docs/ARCHITECTURE.md) |
+| [Development and testnet setup](./docs/DEVELOPMENT.md) | [Editable video project](./video/README.md) |
+| [Document index](./docs/README.md) | [Sources, design and media credits](./docs/CREDITS.md) |
+
+<details>
+<summary>Arena402 historical testnet wallets</summary>
+
+Injective EVM Testnet · chain ID **1439**.
 
 | Role | Address | Historical use |
 | --- | --- | --- |
-| Facilitator | `0x7fB8d49698E40656F727511Da6251D3e6dfFaD50` | Faucet recipient, contract deployment and gas payer |
+| Facilitator | `0x7fB8d49698E40656F727511Da6251D3e6dfFaD50` | Faucet recipient, deployment and gas payer |
 | Seller | `0x93Dafa6bFa2428CA033e8d6Fe9C94e40d1AC8754` | Seller payment recipient in trading tests |
 
-Source: historical `agent-arena/settlement/deployments.json` (Facilitator reference: line 19), reconfirmed by the owner. Balances were **not re-queried for this update**. These are wallet references; active ArenaCover deployment metadata remains in [`public/deployment.json`](./public/deployment.json).
+Owner-confirmed references from `agent-arena/settlement/deployments.json` (Facilitator: line 19). Balances were not re-queried for this documentation update. [Address JSON](./docs/arena402-historical-testnet-wallets.json) · [Earlier resource snapshot](./RESOURCE_STATUS.md).
 
-[Machine-readable address record](./docs/arena402-historical-testnet-wallets.json) · [Earlier balance snapshot and resource notes](./RESOURCE_STATUS.md)
+</details>
 
-## Guarantee terms
-
-| Item | Fixed demo term |
-| --- | --- |
-| Initial user balance | 100 DemoUSD |
-| Operator capital | 100 DemoUSD |
-| Premium | 1 DemoUSD |
-| Authorized payment | 10 DemoUSD, once |
-| Duplicate payment | A second distinct payment for the same order |
-| Maximum compensation | 10 DemoUSD, once |
-| Final user / pool | 89 / 90 DemoUSD |
-
-Market losses, strategy performance, gas, refunds, expiry, capital withdrawal and multi-order underwriting are outside this prototype. Execution and guarantee share one demo contract; this is not an independent external-agent oracle or a licensed insurance product. No TEE verification is connected and no x402 settlement is claimed.
-
-## Arena402 relationship and provenance
-
-Arena402 is the intended first integration target. The original frontend settlement-stage and ledger evidence designs informed the flow; this project was created as a fresh repository, not a fork. No old production backend, wallet secret store, authentication or game API is copied into this application.
-
-References: [Arena frontend](https://github.com/Adkid-Zephyr/arena402/tree/ce0edbe6791bfde182ac0482505fe9f8b565a032), [referenced backend](https://github.com/13-pieces-teen/adx_agentic_payment). ERC20 and safety helpers are supplied by OpenZeppelin through npm, under their bundled license.
-
-## Planning and delivery
-
-[PRD](./PRD.md) · [Development checklist](./DEVELOPMENT_TASKS.md) · [TEE readiness checklist](./TEE_PRECHECK.md) · [75-second storyboard](./DEMO_90S.md) · [Original planning entry](./PLANNING_README.md)
-
-Recorded local-chain evidence may be displayed on a hosted read-only replay. It must stay labelled as a local recorded run and does not imply Injective testnet settlement.
-
-## Visual design and film
-
-The frontend adapts the cobalt palette, condensed typography and editorial spacing of [Hermes Agent](https://hermes-agent.nousresearch.com), using the user-requested [clone-any-website skill](https://github.com/promptwhisper/clone-any-website-skill). The shield is original generated artwork; fonts are locally bundled Barlow Condensed and IBM Plex Mono under SIL OFL. No Hermes logo, commercial trial fonts, compiled source bundle or analytics is reused. This is an intentional brand adaptation, not a pixel-identical replica.
-
-Film music: **'Pursuit' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au**. [Track and license](https://www.scottbuckley.com.au/library/pursuit/). Include this credit in any YouTube upload description. Voice: disclosed synthesized English narration.
-
-Editable launch-film source: [`video/`](./video/README.md).
+Built as a fresh repository for **c0mpiled-17 Seoul · The Best Time to Build in Crypto**, November 9, 2026. [Original planning](./PLANNING_README.md) · [Submission record](./delivery/SUBMISSION.md)
