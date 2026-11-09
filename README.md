@@ -1,38 +1,60 @@
-# ArenaCover 黑客松执行入口
+# ArenaCover
 
-版本：MVP 1.2，单人五小时精简版。准备日期：2026 年 11 月 8 日。开发窗口：11 月 9 日 10:00–15:00，首尔时间 KST。
+**Autonomy needs accountability.** A prefunded execution guarantee for agent payments, built for c0mpiled Seoul on November 9, 2026.
 
-目标是完成一份有资金支持的 Agent 执行保障：固定一笔业务订单，实际发生重复测试币扣款后，按固定规则赔回多扣的金额。
+A fixed business order permits one 10 DemoUSD payment. An explicit fault harness charges it twice; the guarantee checks confirmed contract state and compensates the extra 10 from the operator’s prefunded reserve.
 
-## 明早阅读顺序
+## Run locally
 
-1. [PRD](./PRD.md)：精简后的必做范围、资金和责任边界、验收标准。
-2. [开发任务清单](./DEVELOPMENT_TASKS.md)：T01–T10、时间上限、Arena 复用上限和降级层级。
-3. [90 秒演示流程](./DEMO_90S.md)：镜头、讲稿和关键问答。
+Requires Node.js 22 or newer. No personal wallet, real assets, database, or external API key is needed for the local sandbox.
 
-明早 10:00 先打开 [TEE 五分钟检查](./TEE_PRECHECK.md)，按逐分钟步骤决定是否接入；它属于 T01，不额外占用开发时间。
+1. Run `npm ci` and `npm run compile:contracts`.
+2. In one terminal run `npm run chain` (localhost only, chain 31337).
+3. In a second terminal run `npm run deploy:local`.
+4. Run `npm run dev` and open [the local app](http://127.0.0.1:3000).
+5. Connect the sandbox wallet, protect the trade, run the controlled fault, and verify compensation.
 
-## 本场锁定的范围
+The sandbox uses a publicly known development mnemonic, and signing is fenced to a localhost webpage, localhost RPC and chain 31337. Never fund these development accounts on public networks. Testnet deployment uses separately generated wallets stored only in the ignored `.local` directory.
 
-- 两个合约：DemoUSD、ArenaCoverDemo；一名固定用户、一笔固定订单。
-- 四个页面入口：连接钱包、建立保障、运行故障场景、核验并赔付。
-- 一次完整测试网演示，真实凭证和关键约束测试。
-- 一份 90 秒视频及可访问的产品仓库；公开前端托管最多尝试 10 分钟。
+Each deployment supports one order. Run `npm run deploy:local` to prepare another; existing chain records are preserved.
 
-唯一保留的 Arena 能力是 **TEE 签名事故回执**：5 分钟检查现有接口和证明链，通过后最多用 15 分钟接入本次订单。只作为证据旁路，不改合约或资金流程；失败明确降级为无 TEE 版。x402、LLM、多订单、到期释放、独立市场亏损场景和原 Arena 后台仍留到赛后。本场的 Agent 是固定演示执行流程，不能宣称接入生产交易 Agent。
+## Verify
 
-## 余额和时间检查
+- `npm test` — six contract behavior tests.
+- `npm run typecheck` and `npm run build` — frontend checks.
+- `node scripts/browser-check.mjs` — exercises a fresh local deployment in Chromium; writes confirmed receipts and screenshots. Install Chromium with `npx playwright install chromium` first.
+- `npm run scenario` — terminal execution of a fresh deployment, with machine-readable evidence.
 
-用户余额：**100 → 99 → 89 → 79 → 89 DemoUSD**。池余额：**100 → 90**，赔付后该单锁定额度归零。
+[Verification record](./VERIFICATION.md) · [Confirmed run JSON](./public/evidence/run.json) · [TEE check result](./TEE_CHECK_RESULT.md)
 
-13:15 冻结核心，13:30 停止 TEE 接入；13:50–14:10 是故障缓冲；14:10 录制；14:40 提交。共 300 分钟：核心和环境 190、TEE 检查与接入 20、验收 20、故障缓冲 20、录制提交 50。
+## Testnet deployment
 
-五小时完成以工具、测试 gas 和网络可用为前提。失败时按任务清单区分完整页面、脚本执行、本地链及概念演示，不混淆完成层级。
+`npm run deploy:testnet` prepares separate local testnet wallets and prints only their addresses. Fund the operator through the [official Injective testnet faucet](https://testnet.faucet.injective.network/) and rerun the command. It checks chain 1439, deploys two contracts, seeds test tokens, and funds the user’s test gas. Existing deployment credentials can instead be supplied in an untracked `.env.local`; see `.env.example`. Never commit secrets.
 
-## 今晚的边界
+This is deployment tooling, not evidence that testnet deployment completed. Check the active `public/deployment.json` and verification record for actual network status.
 
-本目录只交付策划文档，不写产品代码、合约、测试程序，不部署、不提交产品仓库。活动公开规则允许提前构思，要求产品现场完成并限制开发时段前的仓库提交；明天 10:00 后再开始产品工作。[活动规则](https://luma.com/compiled-8lsr)
+## Guarantee terms
 
-## 参考与状态
+| Item | Fixed demo term |
+| --- | --- |
+| Initial user balance | 100 DemoUSD |
+| Operator capital | 100 DemoUSD |
+| Premium | 1 DemoUSD |
+| Authorized payment | 10 DemoUSD, once |
+| Duplicate payment | A second distinct payment for the same order |
+| Maximum compensation | 10 DemoUSD, once |
+| Final user / pool | 89 / 90 DemoUSD |
 
-Arena402 前端参考提交为 ce0edbe6791bfde182ac0482505fe9f8b565a032；UI 只尝试取步骤条和交易链接小片段，合计最多 10 分钟；TEE 还须核对实际接口和来源，前端仓库不能证明后端能力可用。Injective RPC 在规划时曾返回 Chain ID 1439，明早复查；产品实现和测试网闭环尚未开始。
+Market losses, strategy performance, gas, refunds, expiry, capital withdrawal and multi-order underwriting are outside this prototype. Execution and guarantee share one demo contract; this is not an independent external-agent oracle or a licensed insurance product. No TEE verification is connected and no x402 settlement is claimed.
+
+## Arena402 relationship and provenance
+
+Arena402 is the intended first integration target. The original frontend settlement-stage and ledger evidence designs informed the flow; this project was created as a fresh repository, not a fork. No old production backend, wallet secret store, authentication or game API is copied into this application.
+
+References: [Arena frontend](https://github.com/Adkid-Zephyr/arena402/tree/ce0edbe6791bfde182ac0482505fe9f8b565a032), [referenced backend](https://github.com/13-pieces-teen/adx_agentic_payment). ERC20 and safety helpers are supplied by OpenZeppelin through npm, under their bundled license.
+
+## Planning and delivery
+
+[PRD](./PRD.md) · [Development checklist](./DEVELOPMENT_TASKS.md) · [TEE readiness checklist](./TEE_PRECHECK.md) · [90-second storyboard](./DEMO_90S.md) · [Original planning entry](./PLANNING_README.md)
+
+Recorded local-chain evidence may be displayed on a hosted read-only replay. It must stay labelled as a local recorded run and does not imply Injective testnet settlement.

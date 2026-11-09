@@ -1,0 +1,59 @@
+{
+  "mode": "local",
+  "chainId": 31337,
+  "network": "Local EVM sandbox",
+  "rpcUrl": "http://127.0.0.1:8545",
+  "explorer": null,
+  "operator": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+  "user": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+  "token": "0x5fbdb2315678afecb367f032d93f642f64180aa3",
+  "cover": "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512",
+  "orderId": "0xf23ab5864e050ff244eb9bb89de57a512ee4af6063ea86309ba63d267de02a1e",
+  "termsHash": "0xdbbc3b4e8e39d935fc002863861b519f1dda0e71a1e69bb85b170617ec7c1379",
+  "deployedAt": "2026-11-09T05:14:22.818Z",
+  "deploymentTransactions": {
+    "DemoUSD": "0x502a87ef42459f6fef010e00631200b3ec7c394d4f1b2250227541c8afc3bd6a",
+    "ArenaCoverDemo": "0xfa0995691fb74be36def62a66f5b20ccbcab87e97e7f97a3ca73acde04fac95a",
+    "approveCapital": "0xc0db9f69fc628bf9436fc96345485989fb6b9333bf64f339bee43271393c5b20",
+    "fund": "0xdb33bb40f69fc64ab9bab382b3cd275d7a7bdb6a46b98e67978de62ad3f7b6c5"
+  },
+  "recordedAt": "2026-11-09T05:16:07.904Z",
+  "transactions": [
+    {
+      "name": "protect",
+      "hash": "0xedcf088d3521f9498620a1960e1d801ba96067f31ad5493fda74d08a4b943640",
+      "blockNumber": "6",
+      "userBalance": "99000000"
+    },
+    {
+      "name": "executePayment",
+      "hash": "0xe78e3bdb9c43e09ea2be8a47f53d1b361d8193f32aa386e01c265b44f64f4366",
+      "blockNumber": "7",
+      "userBalance": "89000000"
+    },
+    {
+      "name": "injectDuplicate",
+      "hash": "0x0a25d403c176ef9c9ac334597e2c4d872659a8c76de1b6f03fedff8aa0ec671e",
+      "blockNumber": "8",
+      "userBalance": "79000000"
+    },
+    {
+      "name": "claim",
+      "hash": "0xbf02ef3d101427b67d289644a59e7a588847be88b8a166fd993f294300af6b69",
+      "blockNumber": "9",
+      "userBalance": "89000000"
+    }
+  ],
+  "finalUserBalance": "89000000",
+  "finalPoolBalance": "90000000",
+  "reserved": "0",
+  "tee": {
+    "status": "not_connected",
+    "verified": false
+  },
+  "verification": {
+    "browser": "Playwright Chromium",
+    "pageErrors": [],
+    "confirmedReceipts": 4
+  }
+}

@@ -1,0 +1,1 @@
+{"status":"not_connected","verified":false,"reason":"No reusable TEE signing endpoint, application identity, key attestation and verifier have been supplied or verified. Compensation uses contract state only."}
