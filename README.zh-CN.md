@@ -18,6 +18,19 @@
 
 每一步都有交易凭证。托管版为明确标注的只读回放；本机运行可亲自完成全流程。所有代币均为无价值测试资产。
 
+## Arena402 历史测试网钱包
+
+网络：**Injective EVM 测试网 · Chain ID 1439**。
+
+| 角色 | 地址 | 历史用途 |
+| --- | --- | --- |
+| Facilitator | `0x7fB8d49698E40656F727511Da6251D3e6dfFaD50` | 接收 Faucet 测试币、部署合约、支付 Gas |
+| Seller | `0x93Dafa6bFa2428CA033e8d6Fe9C94e40d1AC8754` | 交易测试中的卖方收款地址 |
+
+来源：旧项目 `agent-arena/settlement/deployments.json`，其中 Facilitator 的定位为第 19 行，已由所有者再次确认。**本次补充未重新查询当前余额。** 地址作为历史钱包资料保存；ArenaCover 当前部署状态见 [`public/deployment.json`](./public/deployment.json)。
+
+[机器可读地址记录](./docs/arena402-historical-testnet-wallets.json) · [较早的余额快照与资源说明](./RESOURCE_STATUS.md)
+
 ## 本地运行
 
 需要 Node.js 22+。

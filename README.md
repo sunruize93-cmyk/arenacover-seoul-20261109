@@ -47,6 +47,19 @@ Each deployment supports one order. Run `npm run deploy:local` to prepare anothe
 
 This is deployment tooling, not evidence that testnet deployment completed. Check the active `public/deployment.json` and verification record for actual network status.
 
+## Historical Arena402 testnet wallets
+
+Network: **Injective EVM Testnet · chain ID 1439**.
+
+| Role | Address | Historical use |
+| --- | --- | --- |
+| Facilitator | `0x7fB8d49698E40656F727511Da6251D3e6dfFaD50` | Faucet recipient, contract deployment and gas payer |
+| Seller | `0x93Dafa6bFa2428CA033e8d6Fe9C94e40d1AC8754` | Seller payment recipient in trading tests |
+
+Source: historical `agent-arena/settlement/deployments.json` (Facilitator reference: line 19), reconfirmed by the owner. Balances were **not re-queried for this update**. These are wallet references; active ArenaCover deployment metadata remains in [`public/deployment.json`](./public/deployment.json).
+
+[Machine-readable address record](./docs/arena402-historical-testnet-wallets.json) · [Earlier balance snapshot and resource notes](./RESOURCE_STATUS.md)
+
 ## Guarantee terms
 
 | Item | Fixed demo term |

@@ -1,0 +1,23 @@
+{
+  "recordType": "historical_wallet_references",
+  "network": "Injective EVM Testnet",
+  "chainId": 1439,
+  "source": {
+    "repositoryPath": "agent-arena/settlement/deployments.json",
+    "facilitatorLineReference": 19,
+    "confirmation": "Owner reconfirmed historical addresses in this session"
+  },
+  "wallets": {
+    "facilitator": {
+      "address": "0x7fB8d49698E40656F727511Da6251D3e6dfFaD50",
+      "historicalUses": ["faucet_recipient", "contract_deployer", "gas_payer"]
+    },
+    "seller": {
+      "address": "0x93Dafa6bFa2428CA033e8d6Fe9C94e40d1AC8754",
+      "historicalUses": ["seller_payment_recipient_in_trading_tests"]
+    }
+  },
+  "balanceStatus": "not_requeried_for_this_document_update",
+  "balanceSnapshotReference": "../RESOURCE_STATUS.md",
+  "activeArenaCoverDeploymentReference": "../public/deployment.json"
+}

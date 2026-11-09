@@ -1,6 +1,10 @@
 # 旧 Arena 资源核对
 
-2026 年 11 月 9 日，Injective EVM 测试网 Chain ID 1439。查询时区块 147719135。
+2026 年 11 月 9 日，Injective EVM 测试网 Chain ID 1439。下表保留本次开发较早查询的历史快照，查询时区块 147719135；不是实时余额。
+
+用户随后再次确认：Facilitator `0x7fB8d49698E40656F727511Da6251D3e6dfFaD50` 曾用于接收 Faucet 测试币、部署合约和付 Gas；Seller `0x93Dafa6bFa2428CA033e8d6Fe9C94e40d1AC8754` 是交易测试中的卖方收款地址。用户提供的原始定位为 `E:/AI_Project/adx_agentic_payment/agent-arena/settlement/deployments.json:19`（Facilitator）。本次补充仅记录历史地址与用途，未重新查询余额或执行交易。
+
+[机器可读地址记录](./docs/arena402-historical-testnet-wallets.json)
 
 | 配置角色 | 地址 | INJ | mUSDC |
 | --- | --- | --- | --- |

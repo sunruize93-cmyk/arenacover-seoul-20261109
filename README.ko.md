@@ -18,6 +18,19 @@
 
 모든 단계에 거래 영수증이 있습니다. 호스팅된 페이지는 명시된 읽기 전용 리플레이이며, 로컬 실행에서는 직접 전 과정을 수행할 수 있습니다. 토큰에는 금전적 가치가 없습니다.
 
+## Arena402 과거 테스트넷 지갑
+
+네트워크: **Injective EVM Testnet · Chain ID 1439**.
+
+| 역할 | 주소 | 과거 용도 |
+| --- | --- | --- |
+| Facilitator | `0x7fB8d49698E40656F727511Da6251D3e6dfFaD50` | Faucet 테스트 토큰 수령, 컨트랙트 배포 및 Gas 지불 |
+| Seller | `0x93Dafa6bFa2428CA033e8d6Fe9C94e40d1AC8754` | 거래 테스트의 판매자 수령 지갑 |
+
+출처는 기존 `agent-arena/settlement/deployments.json`이며, Facilitator의 참조 위치는 19행입니다. 소유자가 과거 주소를 다시 확인했습니다. **이번 문서 업데이트에서는 현재 잔액을 다시 조회하지 않았습니다.** 현재 ArenaCover 배포 정보는 [`public/deployment.json`](./public/deployment.json)에 있습니다.
+
+[기계 판독용 주소 기록](./docs/arena402-historical-testnet-wallets.json) · [이전 잔액 스냅샷과 리소스 설명](./RESOURCE_STATUS.md)
+
 ## 로컬 실행
 
 Node.js 22 이상이 필요합니다.
